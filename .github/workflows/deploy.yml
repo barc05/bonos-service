@@ -28,7 +28,7 @@ jobs:
     - name: Build, Tag, and Push Image to Amazon ECR
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_BONOS }} 
+        ECR_REPOSITORY: bonos-service
         IMAGE_TAG: ${{ github.sha }}
       run: |
         # Compilar usando el Dockerfile multi-stage y no-root
